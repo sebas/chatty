@@ -46,14 +46,13 @@ class App extends Component {
     let previous = data.currentUser.name;
     data.currentUser.name = username;
     this.setState({ data });
-    this.wsSocket.send(JSON.stringify({ username: this.state.data.currentUser.name, content: `${previous} changed their name to ${username}`, type: 'postNotification' }));
+    this.wsSocket.send(JSON.stringify({ username: this.state.data.currentUser.name, content: ` ${previous} changed their name to ${username}.`, type: 'postNotification' }));
   }
 
   componentDidMount() {
     console.log('componentDidMount <App />');
     this.wsSocket.onopen = function (event) {
       console.log('Connected to WebSocket server...');
-      // this.wsSocket.send("Here's some text that the server is urgently awaiting!"); 
     };
   }
 
