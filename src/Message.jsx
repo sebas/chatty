@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
+// The Message component receives individual messages and depending
+// on the type of the message renders it differently.
+
 class Message extends Component {
   render() {
-    console.log('pal switch', this.props);
     switch (this.props.type) {
       case 'incomingNotification':
         return (
@@ -20,8 +22,8 @@ class Message extends Component {
         );
         break;
       default:
-        // show an error in the console if the message type is unknown
-        throw new Error('Unknown event type ' + this.props.type);
+        // Show an error in the console if the message type is unknown
+        throw new Error('Unknown message type ' + this.props.type);
     }
 
   }
