@@ -39,6 +39,9 @@ npm start
 * sass-loader
 * sockjs-client
 * style-loader
+* express
+* uuid
+* ws
 
 ## Final Product
 
